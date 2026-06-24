@@ -12,7 +12,7 @@ const Category = () => {
     }
 
     useEffect(() => {
-        fetchCategory()
+        fetchCategory();
     },[])
 
     return (
