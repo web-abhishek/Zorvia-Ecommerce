@@ -12,6 +12,7 @@ import Checkout from './pages/Checkout.tsx'
 import Wishlist from './pages/Wishlist.tsx'
 import Contact from './pages/Contact.tsx'
 import Error from './pages/Error.tsx'
+import Category from './pages/Category.tsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const appRouter = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "category",
+        element: <Category/>
       },
       {
         path: "products",

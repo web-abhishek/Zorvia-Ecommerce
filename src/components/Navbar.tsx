@@ -11,13 +11,13 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </label>
-                   <Link to="/"> <img src={logo} alt="Logo" className="h-auto w-40" /> </Link>
+                    <Link to="/"> <img src={logo} alt="Logo" className="h-auto w-40" /> </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li> <Link to="/"> <button>Home</button> </Link> </li>
                         <li><Link to="/about"> <button>About Us</button> </Link> </li>
-                        <li>
+                        <li> <Link to="/category">
                             <details>
                                 <summary>Categories</summary>
                                 <ul className="p-2 bg-base-100 w-40 z-1">
@@ -27,6 +27,7 @@ const Navbar = () => {
                                     <li><button>Home & Garden</button></li>
                                 </ul>
                             </details>
+                        </Link>
                         </li>
                         <li><Link to="/products"> <button>All Products</button> </Link> </li>
                         <li><Link to="/contact"> <button>Contact Us</button> </Link> </li>
