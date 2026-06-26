@@ -1,3 +1,9 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 import insta1 from "../assets/social/insta1.jpg"
 import insta2 from "../assets/social/insta2.jpg"
 import insta3 from "../assets/social/insta3.jpg"
@@ -22,10 +28,106 @@ import mensShirts from "../assets/features/mens-shirts.jpg"
 import groceries from "../assets/features/groceries.jpg"
 import furniture from "../assets/features/furniture.jpg"
 
+import banner from "../assets/banner.jpg"
 
 const Home = () => {
     return (
         <div>
+            <section className="relative overflow-hidden py-24">
+  {/* Background Text */}
+  <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-[180px] font-black uppercase text-gray-100 select-none pointer-events-none">
+    FRESH
+  </h1>
+
+  <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+      {/* Left Content */}
+      <div>
+        <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium mb-6">
+          New Collection 2026
+        </span>
+
+        <h2 className="text-5xl font-bold leading-tight text-gray-900 mb-6">
+          Fresh styles for
+          <span className="text-blue-600"> every moment.</span>
+        </h2>
+
+        <p className="text-gray-500 text-lg leading-8 mb-10">
+          Discover premium fashion, accessories, electronics and lifestyle
+          essentials curated for everyday living. Crafted with quality,
+          designed for comfort, delivered with style.
+        </p>
+
+        <div className="flex gap-5">
+          <Link to="/products">
+            <button className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition">
+              Shop Now →
+            </button>
+          </Link>
+
+          <button className="px-8 py-4 rounded-full border border-gray-300 hover:border-blue-600 transition">
+            Explore
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div className="flex gap-12 mt-16">
+          <div>
+            <h3 className="text-4xl font-bold text-gray-900">50K+</h3>
+            <p className="text-gray-500">Happy Customers</p>
+          </div>
+
+          <div>
+            <h3 className="text-4xl font-bold text-gray-900">1.2K+</h3>
+            <p className="text-gray-500">Premium Products</p>
+          </div>
+
+          <div>
+            <h3 className="text-4xl font-bold text-gray-900">99%</h3>
+            <p className="text-gray-500">Positive Reviews</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Image */}
+      <div className="relative flex justify-center">
+
+        {/* Background Blob */}
+        <div className="absolute w-[420px] h-[420px] bg-blue-100 rounded-full blur-3xl"></div>
+
+        {/* Main Image */}
+        <img
+          src={banner}
+          alt=""
+          className="relative rounded-3xl shadow-2xl w-[420px] object-cover z-10"
+        />
+
+        {/* Floating Card */}
+        <div className="absolute -bottom-8 -left-10 bg-white/80 backdrop-blur-xl shadow-xl rounded-2xl p-5 z-20">
+          <p className="text-sm text-gray-500">
+            Trending This Week
+          </p>
+
+          <h4 className="font-bold text-lg">
+            Premium Collection
+          </h4>
+
+          <p className="text-blue-600 font-semibold mt-1">
+            Up to 50% OFF
+          </p>
+        </div>
+
+        {/* Floating Badge */}
+        <div className="absolute top-8 -right-6 bg-black text-white rounded-full px-6 py-3 shadow-lg z-20">
+          ⭐ Best Seller
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
             <div className="max-w-7xl mx-auto px-4 py-8">
                 <div className="flex flex-col items-center">
@@ -42,43 +144,59 @@ const Home = () => {
                             <button className="btn btn-primary mt-5">View More</button>
                         </Link>
                     </div>
+                    <Swiper
+                        modules={[Autoplay]}
+                        spaceBetween={15}
+                        slidesPerView={4}
+                        loop={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        breakpoints={{
+                            320: {
+                            slidesPerView: 1,
+                            },
+                            640: {
+                            slidesPerView: 2,
+                            },
+                            1024: {
+                            slidesPerView: 4,
+                            },
+                        }}
+                        >
+                        <SwiperSlide>
+                            <img src={womensWatches} alt="Women's Watches" className="w-full h-64 object-cover rounded-xl" />
+                        </SwiperSlide>
 
-                    <div className="carousel carousel-end rounded-box gap-3">
-                        <div className="carousel-item">
-                            <img src={womensWatches} alt="womensWatches" />
-                        </div>
-                        <div className="carousel-item">
-                            <img
-                            src={womensDresses}
-                            alt="womensDresses" />
-                        </div>
-                        <div className="carousel-item">
-                            <img
-                            src={womensShoes}
-                            alt="womensShoes" />
-                        </div>
-                        <div className="carousel-item">
-                            <img
-                            src={tops}
-                            alt="tops" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={sportsAccessories} alt="sportsAccessories" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={mensShirts} alt="MensShirts" />
-                        </div>
-                        <div className="carousel-item">
-                            <img
-                            src={groceries}
-                            alt="Groceries" />
-                        </div>
-                         <div className="carousel-item">
-                            <img
-                            src={furniture}
-                            alt="Furniture" />
-                        </div>
-                        </div>
+                        <SwiperSlide>
+                            <img src={womensDresses} alt="Women's Dresses" className="w-full h-64 object-cover rounded-xl" />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <img src={womensShoes} alt="Women's Shoes" className="w-full h-64 object-cover rounded-xl"/>
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <img src={tops} alt="Tops" className="w-full h-64 object-cover rounded-xl" />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <img src={sportsAccessories} alt="Sports Accessories" className="w-full h-64 object-cover rounded-xl" />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <img src={mensShirts} alt="Men's Shirts" />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <img src={groceries} alt="Groceries" />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <img src={furniture} alt="Furniture" />
+                        </SwiperSlide>
+                        </Swiper>
                 </div>
             </div>
 
